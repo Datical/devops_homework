@@ -1,0 +1,13 @@
+<div class="new-todo">
+  <h2 class="new-todo__heading">Add an Item</h2>
+  <form class="new-todo__form">
+    <mat-form-field class="new-todo__input">
+      <mat-label>ToDo Item</mat-label>
+      <input matInput tabindex="-1" [formControl]="description">
+    </mat-form-field>
+  </form>
+  <div class="new-todo__actions">
+    <button mat-button (click)="onCancel()" tabindex="-1">Cancel</button>
+    <button mat-raised-button (click)="onSubmit()" color="accent" tabindex="-1">Submit</button>
+  </div>
+</div>

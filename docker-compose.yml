@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: postgres:10.7-alpine
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - "db/postgres-init.sql:/docker-entrypoint-initdb.d/postgres-init.sql"
+    ports:
+      - "5432:5432"
+    networks:
+      - backend  
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+
+  client:
+    image: todo-client
+    build:
+      context: ./todo-client
+    ports:
+      - "80:80"
+    networks:
+      - frontend
+    depends_on:
+      - api
+    #environment:
+    restart: always
+
+  api:
+    image: todo-api
+    build:
+      context: ./todo-api
+    ports:
+      - "3000:3000"
+    networks:
+      - backend
+    depends_on:
+      - db
+    #environment:
+    restart: always
+
+networks:
+  frontend:
+  backend:
+      
+volumes:
+  db-data:

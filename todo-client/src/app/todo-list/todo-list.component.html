@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>ToDo Items</mat-card-title>
+    <div class="spacer"></div>
+    <button mat-icon-button (click)="onReloadList()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-selection-list #items>
+      <mat-list-option *ngFor="let item of todoListItems">
+        <mat-icon matListIcon (click)="onDeleteItem($event, item.id)">delete</mat-icon>
+        {{ item.description }}
+      </mat-list-option>
+    </mat-selection-list>
+
+    <p *ngIf="todoListItems?.length < 1">No ToDo list items were found. Please try adding some using the green button in
+      the bottom right of the view.</p>
+
+    <ng-container *ngIf="todoListItems?.length > 0">
+      <br>
+      <mat-divider></mat-divider>
+      <p>
+        Items Completed: {{items.selectedOptions.selected.length}}
+      </p>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
