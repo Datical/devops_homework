@@ -1,4 +1,4 @@
-# Liquibase SRE Homework
+# Liquibase DevOps Homework
 
 Please clone this repo.  Do not fork unless you want others to potentially see your work.
 
