@@ -2,7 +2,7 @@
 
 Please clone this repo.  Do not fork unless you want others to potentially see your work.
 
-Please ask questions.  You can email me at jake@liquibase.com.  I anticipated 3-4 hours for this project, so please get as far as you can in that timeframe.
+Please ask questions.  You can email me at jake@liquibase.com.  I anticipated 3-4 hours for this project, but please take your time.
 
 The assignment is to build the infrastructure, deploy the app, and put it together in a pipeline.
 
