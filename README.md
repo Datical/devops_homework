@@ -39,18 +39,3 @@ Deploy your docker containers to the EC2 instance created above.
 
 * The database is currently a local postgres docker container.  This is fine for local development, but not suitable for production.  Make any necessary changes required to use the RDS Database you created instead.
 
-### API Config
-
-Many of the APIs configuration options can be found in `todo-api/src/main.ts`.
-
-The API Expects a Postgres Database to be running. The expected properties of this DB can be found in `todo-api/src/database/database.providers.ts`
-
-### Client Config
-
-The Client Application's configurations can be found at `todo-client/src/environments/environment.**.ts`.
-
-## Task 5 - Pipeline
-
-Create a Github Actions pipeline that does the following:
-
-* On commits to the master branch, apply any terraform changes and then re-deploy the updated app.
