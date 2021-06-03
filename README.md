@@ -2,13 +2,20 @@
 
 Please clone this repo.  Do not fork unless you want others to potentially see your work.
 
-Please ask questions.  You can email me at jake@liquibase.com.  I anticipated 3-4 hours for this project, but please take your time.
+Please ask questions.  You can email me at jake@liquibase.com.
 
-The assignment is to build the infrastructure, deploy the app, and put it together in a pipeline.
+The assignment is to build the infrastructure, troubleshoot the app, and deploy it.
 
 Please create a NOTES.md with your thought process, troubleshooting, and solutions.
 
-## Task 1 - Infrastructure Resources
+## Task 1 - Application
+
+The application is a simple to-do list app.  There are bugs that need to be fixed:
+
+1. The Dockerfile for the api (todo-api) is inefficient.  Convert it to a multi-stage docker build and make it as efficient/small as possible. If done correctly the final image should be < 300 MB.
+2. The docker-compose file in the root of the project has 2 bugs.  Fix them.  You should be able to run a `docker-compose up` to start the application.  If the application is working you should be able to browse to http://localhost and create a to-do list.
+
+## Task 2 - Infrastructure Resources
 
 The infrastructure should be written as code.  Please create a terraform module that will create the following resources in the AWS **free tier**:
 
@@ -24,12 +31,7 @@ The infrastructure should be written as code.  Please create a terraform module 
 * The database should only allow access from the EC2 instance
 * We should be alerted if the ELB health check is not passing.
 
-## Task 2 - Application
 
-The application is a simple to-do list app.  There are bugs that need to be fixed:
-
-1. The Dockerfile for the api (todo-api) is inefficient.  Convert it to a multi-stage docker build and make it as efficient/small as possible. If done correctly the final image should be < 300 MB.
-2. The docker-compose file in the root of the project has 2 bugs.  Fix them.  You should be able to run a `docker-compose up` to start the application.  If the application is working you should be able to browse to http://localhost and create a to-do list.
 
 ## Task 3 - Application Deployment
 
