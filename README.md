@@ -4,9 +4,9 @@ Please clone this repo.  Do not fork unless you want others to potentially see y
 
 Please ask questions.  You can email me at jake@liquibase.com.
 
-The assignment is to build the infrastructure, troubleshoot the app, and deploy it.
+The assignment is to troubleshoot the app locally, build the infrastructure, and deploy it.
 
-Please create a NOTES.md with your thought process, troubleshooting, and solutions.
+Please create a NOTES.md with your thought process, troubleshooting, and solutions.  The goal here is not to "weed someone out" but rather to see your thought process when dealing with a typical DevOps-y day :)
 
 ## Task 1 - Application
 
@@ -17,7 +17,7 @@ The application is a simple to-do list app.  There are bugs that need to be fixe
 
 ## Task 2 - Infrastructure Resources
 
-The infrastructure should be written as code.  Please create a terraform module that will create the following resources in the AWS **free tier**:
+The infrastructure should be written as code.  Please create the following resources in the AWS **free tier**.  Note that using existing public modules is perfectly acceptable:
 
 * Elastic Load Balancer
 * EC2 Instance
@@ -30,8 +30,6 @@ The infrastructure should be written as code.  Please create a terraform module 
 * The EC2 instance should only allow access from the load balancer
 * The database should only allow access from the EC2 instance
 * We should be alerted if the ELB health check is not passing.
-
-
 
 ## Task 3 - Application Deployment
 
