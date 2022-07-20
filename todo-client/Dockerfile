@@ -8,6 +8,6 @@ RUN yarn build
 RUN ls
 
 # Runtime web server
-FROM nginx:alpine
+FROM nginx:1-alpine
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=ui-build app-client/dist/todo-client /usr/share/nginx/html
